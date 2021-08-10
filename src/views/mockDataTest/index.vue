@@ -1,7 +1,7 @@
 <!--界面代码-->
 <template>
   <div class="mockDataTestView">
-    mockDataTestView
+    本地模拟
   </div>
 </template>
 
