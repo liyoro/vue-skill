@@ -1,16 +1,25 @@
+import { tableData } from '@/api/table'
 
 export default {
   name: 'mockDataTestView',
   data() {
     return {
-
+      tableCols: [],
+      tableData: []
     }
   },
-  mounted() {
+  mounted() {},
+  created() {
+    this.testMockTable()
   },
-  created() {},
   methods: {
+    async testMockTable() {
+      const { code, result } = await tableData()
+      if (code !== 0) return
+      this.tableCols = result.cols
+      this.tableData = result.data
+    }
+
   },
-  watch: {
-  }
+  watch: {}
 }
