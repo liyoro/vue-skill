@@ -19,6 +19,11 @@ const routes = [
     path: '/mockdatatest',
     name: 'mockDataTest',
     component: () => import('@/views/mockDataTest/index.vue')
+  },
+  {
+    path: '/charttest',
+    name: 'chartTest',
+    component: () => import('@/views/chartTest/index.vue')
   }
 ]
 

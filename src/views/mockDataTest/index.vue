@@ -2,7 +2,7 @@
 <template>
   <div class="mockDataTestView">
     <h2>本地模拟数据显示</h2>
-    <div>{{tableData}}</div>
+    <div>{{ tableData }}</div>
     <img src="/images/cat.png">
   </div>
 </template>
