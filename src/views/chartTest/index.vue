@@ -1,9 +1,7 @@
 <template>
   <div class="chartTestView">
     <h2>echarts图表封装示例</h2>
-    <div>
-      <chart-panel class="chart-content" :chart-option="chartOpt" height="100%" />
-    </div>
+    <chart-view class="chart-content" :chart-option="chartOpt" :auto-resize="true" height="100%" />
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <!--
  * @Author: liyoro
  * @since: 2021-08-11 17:28:04
- * @lastTime: 2021-08-11 17:42:37
+ * @lastTime: 2021-08-12 16:00:05
 -->
 <!--
     图表
@@ -40,7 +40,7 @@ echarts.use(
 )
 
 export default {
-  name: 'ChartPanel',
+  name: 'ChartView',
   props: {
     width: {
       type: String,
