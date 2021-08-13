@@ -24,6 +24,11 @@ const routes = [
     path: '/charttest',
     name: 'chartTest',
     component: () => import('@/views/chartTest/index.vue')
+  },
+  {
+    path: '/dynamictabletest',
+    name: 'dynamicTableTest',
+    component: () => import('@/views/dynamicTableTest/index.vue')
   }
 ]
 

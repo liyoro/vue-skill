@@ -1,0 +1,23 @@
+.dynamicTableTest {
+  padding: 10px;
+  .ctl-view {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  .overtext {
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  ::v-deep .hide-filter {
+    .el-table__column-filter-trigger {
+      display: none !important;
+    }
+  }
+  ::v-deep .show-filter {
+    .el-table__column-filter-trigger {
+      display: inline-block !important;
+    }
+  }
+}
