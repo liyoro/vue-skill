@@ -7,7 +7,10 @@ export default {
       tableCols: [],
       tableData: [],
       tableShowData: [],
-      filename: ''
+      filename: '',
+      searchColOption: [],
+      searchColItem: '',
+      searchText: ''
     }
   },
   mounted() {},
@@ -19,6 +22,12 @@ export default {
       const { code, result } = await tableData()
       if (code !== 0) return
       this.tableCols = result.cols
+
+      const temp = result.searchcols
+      if (temp.length > 0) {
+        this.searchColOption = temp
+        this.searchColItem = temp[0].prop
+      }
       this.tableData = result.data
       this.filename = result.filename
       this.tableShowData = this.tableData
@@ -27,19 +36,8 @@ export default {
     filterTag(value, row) {
       return row.type === value
     },
-    filterOne(dataList, value, type) {
-      var s = dataList.filter(function(item, index, arr) {
-        for (let j = 0; j < type.length; j++) {
-          if (item[type[j]] !== undefined || item[type[j]] != null) {
-            if (item[type[j]].indexOf(value) >= 0) {
-              return item
-            }
-          }
-        }
-      })
-      return s
-    },
-    handleDownload(tableCols, tableData, etitle) {
+    // 导出Excel
+    handleDownload(tableCols, tableData, filename) {
       const tempname = this.formatDate('yyyy-MM-dd HH:mm:ss')
       const tHeader = []
       const filterVal = []
@@ -54,17 +52,19 @@ export default {
         excel.export_json_to_excel({
           header: tHeader,
           data,
-          filename: etitle + tempname,
+          filename: filename + tempname,
           autoWidth: true,
           bookType: 'xlsx'
         })
       })
     },
+    // 方便对数据特殊处理
     formatJson(filterVal, jsonData) {
       return jsonData.map(v => filterVal.map(j => {
         return v[j]
       }))
     },
+    // 返回格式化时间
     formatDate(fmt) {
       const nowDate = new Date()
       var o = {
@@ -81,19 +81,38 @@ export default {
         if (new RegExp('(' + k + ')').test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length)))
       }
       return fmt
-    }
-  },
-  watch: {
-    filterText() {
-      if (this.filterText.length > 0) {
-        const newarr = this.filterOne(this.tableData, this.filterText, [
-          'hostip'
+    },
+    searchClick() {
+      if (this.searchText) {
+        const searchRes = this.filterOne(this.tableData, this.searchText, [
+          this.searchColItem
         ])
-        this.tableShowData = newarr
-        // console.log(333, newarr);
+        this.tableShowData = searchRes
       } else {
         this.tableShowData = this.tableData
       }
+    },
+    resetClick() {
+      this.searchText = ''
+
+      if (this.searchColOption.length > 0) {
+        this.searchColItem = this.searchColOption[0].prop
+      }
+      this.searchClick()
+    },
+    filterOne(dataList, value, type) {
+      var s = dataList.filter(function(item, index, arr) {
+        for (let j = 0; j < type.length; j++) {
+          if (item[type[j]] !== undefined || item[type[j]] != null) {
+            if (item[type[j]].indexOf(value) >= 0) {
+              return item
+            }
+          }
+        }
+      })
+      return s
     }
+  },
+  watch: {
   }
 }

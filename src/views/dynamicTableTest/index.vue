@@ -3,7 +3,17 @@
     <h2>动态生成表格</h2>
     <div class="content-view">
       <div class="ctl-view">
-        <el-button v-if="tableShowData.length>0" @click="handleDownload(tableCols, tableShowData, filename)" type="primary" size="small">导出</el-button>
+        <el-select v-model="searchColItem" clearable placeholder="请选择要搜索的列" size="small" class="ctl-select">
+          <el-option
+            v-for="item in searchColOption"
+            :key="item.prop"
+            :label="item.label"
+            :value="item.prop" />
+        </el-select>
+        <el-input v-model="searchText" placeholder="请输入内容" size="small" clearable class="ctl-input" />
+        <el-button type="primary" size="small" @click="searchClick">搜索</el-button>
+        <el-button size="small" @click="resetClick">重置</el-button>
+        <el-button v-if="tableShowData.length>0" type="primary" size="small" @click="handleDownload(tableCols, tableShowData, filename)">导出</el-button>
       </div>
       <el-table :data="tableShowData" :border="true" height="420" style="width: 100%">
         <el-table-column

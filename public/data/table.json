@@ -3,6 +3,24 @@
   "msg": "成功",
   "result": {
     "filename": "test",
+    "searchcols": [
+      {
+        "prop": "date",
+        "label": "日期"
+      },
+      {
+        "prop": "name",
+        "label": "姓名"
+      },
+      {
+        "prop": "address",
+        "label": "地址"
+      },
+      {
+        "prop": "type",
+        "label": "类型"
+      }
+    ],
     "cols": [
       {
         "prop": "date",

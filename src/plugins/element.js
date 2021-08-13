@@ -7,7 +7,9 @@ import {
   TableColumn,
   Popover,
   Tooltip,
-  Input
+  Input,
+  Select,
+  Option
 } from 'element-ui'
 
 Vue.use(Button)
@@ -16,3 +18,5 @@ Vue.use(TableColumn)
 Vue.use(Popover)
 Vue.use(Tooltip)
 Vue.use(Input)
+Vue.use(Select)
+Vue.use(Option)

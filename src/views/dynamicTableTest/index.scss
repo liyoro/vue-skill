@@ -3,6 +3,14 @@
   .ctl-view {
     text-align: left;
     margin-bottom: 10px;
+    .ctl-select {
+      width: 180px;
+    }
+    .ctl-input {
+      width: 200px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
   }
   .overtext {
     word-break: keep-all;
