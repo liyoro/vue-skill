@@ -12,5 +12,9 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import './index.scss'
+.amap-view {
+  ::v-deep .amap-logo, ::v-deep .amap-copyright {
+    display: none !important;
+  }
+}
 </style>
