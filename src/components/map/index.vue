@@ -1,6 +1,7 @@
 <template>
   <div class="amap-view">
     <div id="amapcontainer" :style="{ height: mapHeight }" />
+    <slot />
   </div>
 </template>
 
@@ -16,5 +17,10 @@ export default {
   ::v-deep .amap-logo, ::v-deep .amap-copyright {
     display: none !important;
   }
+
+  // #amapcontainer {
+  //   width: 100%;
+  //   height: 520px;
+  // }
 }
 </style>
