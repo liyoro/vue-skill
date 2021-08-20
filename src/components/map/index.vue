@@ -17,10 +17,5 @@ export default {
   ::v-deep .amap-logo, ::v-deep .amap-copyright {
     display: none !important;
   }
-
-  // #amapcontainer {
-  //   width: 100%;
-  //   height: 520px;
-  // }
 }
 </style>

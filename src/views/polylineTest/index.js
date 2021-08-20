@@ -1,23 +1,27 @@
-// import { tableData } from '@/api/table'
-import aMap from '@/components/map/index.vue'
-import polyLine from '@/components/map/polyLine.vue'
+import { polylineData } from '@/api/polyline'
 
 export default {
   name: 'polylineTestView',
   components: {
-    'amap-view': aMap,
-    'amap-polyline': polyLine
+    AmapView: () => import ('@/components/map/index.vue'),
+    AmapPolyline: () => import ('@/components/map/polyLine.vue')
   },
   data() {
     return {
-      map: ''
+      data: []
     }
   },
   mounted() {
   },
   created() {
+    this.testData()
   },
   methods: {
+    async testData() {
+      const { code, result } = await polylineData()
+      if (code !== 0) return
+      this.data = result.data
+    }
 
   },
   watch: {}

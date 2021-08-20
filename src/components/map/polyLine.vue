@@ -3,19 +3,16 @@
 </template>
 
 <script>
-// import indexMap from './index.vue'
-
 export default {
   name: 'AmapPolyline',
-  //   mixins: [indexMap],
   props: {
     linePath: {
       type: Array,
       default() {
         return []
-      }
+      },
+      required: true
     }
-
   },
   data() {
     return {
@@ -33,7 +30,7 @@ export default {
   },
   methods: {
     initComponents(amap) {
-      AMapUI.load(['ui/misc/PathSimplifier'], function(PathSimplifier) {
+      AMapUI.load(['ui/misc/PathSimplifier'], (PathSimplifier) => {
         if (!PathSimplifier.supportCanvas) {
           alert('当前环境不支持 Canvas！')
           return
@@ -60,20 +57,7 @@ export default {
         // 设置数据
         pathSimplifierIns.setData([{
           name: '路线0',
-          path: [
-            [113.216516, 23.405735],
-            [113.217037, 23.40572],
-            [113.217809, 23.405696],
-            [113.218491, 23.405661],
-            [113.218458, 23.40512],
-            [113.218405, 23.404617],
-            [113.218421, 23.402387],
-            [113.218356, 23.401531],
-            [113.218635, 23.401314],
-            [113.220127, 23.401353],
-            [113.221178, 23.401363],
-            [113.222616, 23.401452]
-          ]
+          path: this.linePath
         }])
 
         // 对第一条线路（即索引 0）创建一个巡航器

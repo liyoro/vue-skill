@@ -1,7 +1,7 @@
 import AMapLoader from '@amap/amap-jsapi-loader'
 
 export default {
-  name: 'amap-view',
+  name: 'AmapView',
   props: {
     amapKey: {
       type: String,
@@ -23,7 +23,7 @@ export default {
     },
     height: {
       type: Number | String,
-      default: 420
+      default: 520
     },
     // AMap.Geocoder, AMap.CustomLayer, AMap.ControlBar,
     // AMap.Heatmap, AMap.DistrictSearch, AMap.AdvancedInfoWindow,
@@ -34,7 +34,7 @@ export default {
     },
     uis: {
       type: Array,
-      default: () => ['overlay/SimpleMarker', 'misc/PathSimplifier']
+      default: () => ['overlay/SimpleMarker']
     }
 
   },
@@ -53,9 +53,9 @@ export default {
     this.map = null
   },
   mounted() {
-    this.initMap()
   },
   created() {
+    this.initMap()
   },
   methods: {
     initMap() {

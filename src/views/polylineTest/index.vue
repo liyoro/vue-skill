@@ -2,7 +2,7 @@
   <div class="polylineTestView">
     <h2>人员轨迹测试</h2>
     <amap-view ref="aMap">
-      <amap-polyline />
+      <amap-polyline :line-path="data" />
     </amap-view>
   </div>
 </template>
