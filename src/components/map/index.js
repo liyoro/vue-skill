@@ -65,18 +65,21 @@ export default {
         AMapUI: {
           version: '1.1',
           plugins: this.uis
+        },
+        Loca: { // 是否加载 Loca， 缺省不加载
+          version: '2.0.0' // Loca 版本，缺省 1.3.2
         }
       }).then((AMap) => {
         this.map = new AMap.Map('amapcontainer', {
           zoom: this.zoom, // 级别
           center: this.center, // 中心点坐标
           viewMode: '3D', // 使用3D视图
-          // buildingAnimation: true, // 楼块出现是否带动画
+          buildingAnimation: true, // 楼块出现是否带动画
           // expandZoomRange: true,
           // resizeEnable: true,
           // rotateEnable: true,
           // pitchEnable: true,
-          // pitch: 45,
+          pitch: 62, // 地图倾斜
           // rotation: -15,
           mapStyle: `amap://styles/${this.styleId}`
         })

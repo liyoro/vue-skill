@@ -1,7 +1,7 @@
 const path = require('path')
 const resolve = (dir) => path.join(__dirname, dir)
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+// const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
   // 基本路径
@@ -81,33 +81,34 @@ module.exports = {
   configureWebpack: (config) => {
     config.externals = {
       'AMap': 'AMap',
-      'AMapUI': 'AMapUI'
+      'AMapUI': 'AMapUI',
+      'Loca': 'Loca'
+      // 'BMapGL': 'BMapGL'
     }
     if (process.env.NODE_ENV === 'production') {
       config.plugins.push(
         // eslint-disable-next-line no-undef
-        // new UglifyJsPlugin({
-        //   uglifyOptions: {
-        //     compress: {
-        //       drop_debugger: true,
-        //       drop_console: true // 生产环境自动删除console
-        //     },
-        //     warnings: false
-        //   },
-        //   sourceMap: false,
-        //   parallel: true // 使用多进程并行运行来提高构建速度。默认并发运行数：os.cpus().length - 1。
-        // })
-        new TerserPlugin({
-          terserOptions: {
-            mangle: true, // 混淆，默认也是开的，mangle也是可以配置很多选项的，具体看后面的链接
+        new UglifyJsPlugin({
+          uglifyOptions: {
             compress: {
-              drop_console: true, // 传true就是干掉所有的console.*这些函数的调用.
-              drop_debugger: true, // 干掉那些debugger;
-              pure_funcs: ['console.log'] // 如果你要干掉特定的函数比如console.info ，又想删掉后保留其参数中的副作用，那用pure_funcs来处理
-            }
+              drop_debugger: true,
+              drop_console: true // 生产环境自动删除console
+            },
+            warnings: false
           },
-          sourceMap: false
+          sourceMap: false,
+          parallel: true // 使用多进程并行运行来提高构建速度。默认并发运行数：os.cpus().length - 1。
         })
+        // new TerserPlugin({
+        //   terserOptions: {
+        //     mangle: true, // 混淆，默认也是开的，mangle也是可以配置很多选项的，具体看后面的链接
+        //     compress: {
+        //       drop_console: true, // 传true就是干掉所有的console.*这些函数的调用.
+        //       drop_debugger: true, // 干掉那些debugger;
+        //       pure_funcs: ['console.log'] // 如果你要干掉特定的函数比如console.info ，又想删掉后保留其参数中的副作用，那用pure_funcs来处理
+        //     }
+        //   }
+        // })
       )
     }
   }

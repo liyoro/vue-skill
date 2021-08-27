@@ -39,6 +39,30 @@ const routes = [
     name: 'polylineTest',
     meta: { title: '人员轨迹测试' },
     component: () => import('@/views/polylineTest/index.vue')
+  },
+  {
+    path: '/bmaptest',
+    name: 'bmapTest',
+    meta: { title: '百度地图测试' },
+    component: () => import('@/views/bmapTest/index.vue')
+  },
+  {
+    path: '/bmapgltest',
+    name: 'bmapGLTest',
+    meta: { title: '百度地图GL测试' },
+    component: () => import('@/views/bmapGLTest/index.vue')
+  },
+  {
+    path: '/amaplocatest',
+    name: 'amapLocaTest',
+    meta: { title: '百度地图GL测试' },
+    component: () => import('@/views/amapLocaTest/index.vue')
+  },
+  {
+    path: '/videocapturetest',
+    name: 'videoCaptureTest',
+    meta: { title: 'video视频截图+水印' },
+    component: () => import('@/views/videoCaptureTest/index.vue')
   }
 ]
 

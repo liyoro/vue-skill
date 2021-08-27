@@ -12,7 +12,11 @@ module.exports = {
   extends: ['plugin:vue/recommended', 'eslint:recommended'],
   globals: {
     'AMap': true,
-    'AMapUI': true
+    'AMapUI': true,
+    'Loca': true,
+    'BMap': true,
+    'BMapGL': true,
+    'mapvgl': true
   },
   // add your custom rules here
   // it is base on https://github.com/vuejs/eslint-config-vue

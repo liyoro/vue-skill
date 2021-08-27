@@ -9,7 +9,7 @@ module.exports = {
   /**
    * 这里方便代码里面使用而已，注意要和vue.config.js里面的同步修改
    */
-  publicPath: process.env.NODE_ENV === 'production' ? '/' : '/dist',
+  publicPath: process.env.NODE_ENV === 'production' ? 'https://liyoro.github.io/' : '/dist',
 
   /**
    * @type {boolean} true | false
