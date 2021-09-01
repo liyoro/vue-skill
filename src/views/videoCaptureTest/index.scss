@@ -1,7 +1,19 @@
 .videoCaptureTestView {
+  // video {
+  //   object-fit: fill;
+  // }
   padding: 10px;
+  .video-view {
+    width: 520px;
+    height: 320px;
+    float: left;
+  }
   .capture-img {
     width: 520px;
     height: 320px;
+  }
+  ::v-deep .video-wrapper {
+    padding-bottom: 0px !important;
+    height: 320px !important;
   }
 }

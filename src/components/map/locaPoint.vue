@@ -80,34 +80,34 @@ export default {
       // this.initLink()
 
       // 飞线
-      const linkLayer = new Loca.PulseLinkLayer({
-        loca: this.loca,
-        zooms: [2, 22],
-        zIndex: 20,
-        visible: true,
-        opacity: 1,
-        depth: true
-      })
+      // const linkLayer = new Loca.PulseLinkLayer({
+      //   loca: this.loca,
+      //   zooms: [2, 22],
+      //   zIndex: 115,
+      //   visible: true,
+      //   opacity: 1,
+      //   depth: false
+      // })
 
-      linkLayer.setSource(this.pLineSource)
-      linkLayer.setStyle({
-        lineColors: function(index, item) {
-          return ['#FFD87B', '#FF4F00']
-        },
-        // lineColors: 'rgba(255,255,255,0.7)',
-        height: function(index, item) {
-          return item.distance / 3
-        },
-        smoothSteps: function(index, item) {
-          return 200
-        },
-        lineWidth: function(index, item) {
-          return [200, 200]
-        },
-        dash: function(index, item) {
-          return [200, 600, 500, 900]
-        }
-      })
+      // linkLayer.setSource(this.pLineSource)
+      // linkLayer.setStyle({
+      //   lineColors: function(index, item) {
+      //     return ['#FFD87B', '#FF4F00']
+      //   },
+      //   // lineColors: 'rgba(255,255,255,0.7)',
+      //   height: function(index, item) {
+      //     return item.distance / 3
+      //   },
+      //   smoothSteps: function(index, item) {
+      //     return 200
+      //   },
+      //   lineWidth: function(index, item) {
+      //     return [200, 200]
+      //   },
+      //   dash: function(index, item) {
+      //     return [200, 600, 500, 900]
+      //   }
+      // })
 
       // const dat = new Loca.Dat()
       // dat.addLayer(linkLayer, '示例的点图层')
