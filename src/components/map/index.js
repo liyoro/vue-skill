@@ -79,7 +79,7 @@ export default {
           // resizeEnable: true,
           // rotateEnable: true,
           // pitchEnable: true,
-          // pitch: 62, // 地图倾斜
+          pitch: 62, // 地图倾斜
           // rotation: -15,
           mapStyle: `amap://styles/${this.styleId}`
         })

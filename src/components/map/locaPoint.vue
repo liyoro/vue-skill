@@ -80,37 +80,7 @@ export default {
       // this.initLink()
 
       // 飞线
-      // const linkLayer = new Loca.PulseLinkLayer({
-      //   loca: this.loca,
-      //   zooms: [2, 22],
-      //   zIndex: 115,
-      //   visible: true,
-      //   opacity: 1,
-      //   depth: false
-      // })
-
-      // linkLayer.setSource(this.pLineSource)
-      // linkLayer.setStyle({
-      //   lineColors: function(index, item) {
-      //     return ['#FFD87B', '#FF4F00']
-      //   },
-      //   // lineColors: 'rgba(255,255,255,0.7)',
-      //   height: function(index, item) {
-      //     return item.distance / 3
-      //   },
-      //   smoothSteps: function(index, item) {
-      //     return 200
-      //   },
-      //   lineWidth: function(index, item) {
-      //     return [200, 200]
-      //   },
-      //   dash: function(index, item) {
-      //     return [200, 600, 500, 900]
-      //   }
-      // })
-
-      // const dat = new Loca.Dat()
-      // dat.addLayer(linkLayer, '示例的点图层')
+      this.initPulseLink()
 
       this.loca.animate.start()
     },
@@ -189,6 +159,43 @@ export default {
         }
       })
       this.loca.add(linkLayer)
+    },
+    // 飞线
+    initPulseLink() {
+      const linkLayer = new Loca.PulseLinkLayer({
+        loca: this.loca,
+        zooms: [2, 22],
+        zIndex: 115,
+        visible: true,
+        opacity: 1,
+        depth: true
+      })
+
+      linkLayer.setSource(this.pLineSource)
+      linkLayer.setStyle({
+        unit: 'meter',
+        dash: [300, 0, 300, 0],
+        lineWidth: function() {
+          return [20, 20]
+        },
+        height: function(index, feat) {
+          return feat.distance / 3 + 10
+        },
+        smoothSteps: 200,
+        speed: function(index, prop) {
+          return 50 * index + Math.random() * 200
+          // return index * 10
+        },
+        flowLength: 500,
+        lineColors: function(index, feat) {
+          return ['rgba(104, 68, 254, 0.0)', 'rgba(104, 68, 254, 1.0)', '#0089FF']
+        },
+        maxHeightScale: 0.5, // 弧顶位置比例
+        headColor: 'rgba(255, 255, 204, 1)', //
+        trailColor: 'rgba(255, 255, 255, 1.0)'
+      })
+      // const dat = new Loca.Dat()
+      // dat.addLayer(linkLayer)
     }
   }
 }
