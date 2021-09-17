@@ -186,16 +186,14 @@ export default {
           return 50 * index + Math.random() * 200
           // return index * 10
         },
-        flowLength: 500,
         lineColors: function(index, feat) {
           return ['rgba(104, 68, 254, 0.0)', 'rgba(104, 68, 254, 1.0)', '#0089FF']
         },
         maxHeightScale: 0.5, // 弧顶位置比例
+        flowLength: 500,
         headColor: 'rgba(255, 255, 204, 1)', //
         trailColor: 'rgba(255, 255, 255, 1.0)'
       })
-      // const dat = new Loca.Dat()
-      // dat.addLayer(linkLayer)
     }
   }
 }
