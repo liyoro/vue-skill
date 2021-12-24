@@ -1,7 +1,7 @@
 <!--
  * @Author: liyoro
  * @since: 2021-08-11 17:28:04
- * @lastTime: 2021-12-24 11:10:45
+ * @lastTime: 2021-12-24 11:18:11
 -->
 <!--
     图表
@@ -112,7 +112,7 @@ export default {
       })
       this.chart.setOption(this.chartOption)
       this.chart.on('click', this.handleClick)
-      console.log(222, this.playHighlight)
+
       if (this.playHighlight) {
         this.playHighlightAction()
       }
