@@ -1,7 +1,7 @@
 <!--
  * @Author: liyoro
  * @since: 2021-08-11 17:28:04
- * @lastTime: 2021-08-12 16:00:05
+ * @lastTime: 2021-12-24 11:10:45
 -->
 <!--
     图表
@@ -61,11 +61,18 @@ export default {
     type: {
       type: String,
       default: 'canvas'
+    },
+    playHighlight: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {
-      chart: null
+      chart: null,
+      // 动画定时器
+      actionTimer: '',
+      currentIndex: -1
     }
   },
   watch: {
@@ -91,6 +98,9 @@ export default {
     }
     this.chart.dispose()
     this.chart = null
+
+    clearInterval(this.actionTimer)
+    this.actionTimer = null
   },
   methods: {
     resizeHandler() {
@@ -102,6 +112,10 @@ export default {
       })
       this.chart.setOption(this.chartOption)
       this.chart.on('click', this.handleClick)
+      console.log(222, this.playHighlight)
+      if (this.playHighlight) {
+        this.playHighlightAction()
+      }
     },
     handleClick(params) {
       this.$emit('click', params)
@@ -118,6 +132,30 @@ export default {
     },
     clearChart() {
       this.chart && this.chart.clear()
+    },
+    playHighlightAction() {
+      this.actionTimer = setInterval(() => {
+        const dataLen = this.chartOption.series[0].data.length
+        // 取消之前高亮的图形
+        this.chart.dispatchAction({
+          type: 'downplay',
+          seriesIndex: 0,
+          dataIndex: this.currentIndex
+        })
+        this.currentIndex = (this.currentIndex + 1) % dataLen
+        // 高亮当前图形
+        this.chart.dispatchAction({
+          type: 'highlight',
+          seriesIndex: 0,
+          dataIndex: this.currentIndex
+        })
+        // 显示tooltip
+        this.chart.dispatchAction({
+          type: 'showTip',
+          seriesIndex: 0,
+          dataIndex: this.currentIndex
+        })
+      }, 1000)
     }
   }
 }
