@@ -18,9 +18,10 @@
         class="video-view"
         :video-url="url"
         :stretch="true"
+        :hasaudio="false"
+        :fluent="true"
         live
-        autoplay
-        fluent />
+        autoplay />
       <!-- eslint-disable-next-line vue/html-self-closing -->
       <img class="capture-img" :src="captureImg2" />
     </div>
