@@ -63,6 +63,18 @@ const routes = [
     name: 'videoCaptureTest',
     meta: { title: 'video视频截图+水印' },
     component: () => import('@/views/videoCaptureTest/index.vue')
+  },
+  // {
+  //   path: '/h265test',
+  //   name: 'h265Test',
+  //   meta: { title: 'h265TestView' },
+  //   component: () => import('@/views/h265Test/index.vue')
+  // },
+  {
+    path: '/echartMapTest',
+    name: 'echartMap',
+    meta: { title: 'echart省市地图显示测试' },
+    component: () => import('@/views/echartMapTest/index.vue')
   }
 ]
 
