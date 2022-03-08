@@ -1,0 +1,74 @@
+[
+  {
+    "index": 1,
+    "adcode": 440103,
+    "name": "荔湾区",
+    "num": 230
+  },
+  {
+    "index": 2,
+    "adcode": 440104,
+    "name": "越秀区",
+    "num": 231
+  },
+  {
+    "index": 3,
+    "adcode": 440105,
+    "name": "海珠区",
+    "num": 232
+  },
+  {
+    "index": 4,
+    "adcode": 440106,
+    "name": "天河区",
+    "num": 233
+  },
+  {
+    "index": 5,
+    "adcode": 440111,
+    "name": "白云区",
+    "num": 234
+  },
+  {
+    "index": 6,
+    "adcode": 440112,
+    "name": "黄埔区",
+    "num": 235
+  },
+  {
+    "index": 7,
+    "adcode": 440116,
+    "name": "萝岗区",
+    "num": 236
+  },
+  {
+    "index": 8,
+    "adcode": 440113,
+    "name": "番禺区",
+    "num": 237
+  },
+  {
+    "index": 9,
+    "adcode": 440114,
+    "name": "花都区",
+    "num": 238
+  },
+  {
+    "index": 10,
+    "adcode": 440115,
+    "name": "南沙区",
+    "num": 239
+  },
+  {
+    "index": 11,
+    "adcode": 440117,
+    "name": "从化区",
+    "num": 240
+  },
+  {
+    "index": 12,
+    "adcode": 440118,
+    "name": "增城区",
+    "num": 241
+  }
+]
