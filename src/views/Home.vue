@@ -9,8 +9,8 @@
       <router-link to="/bmapgltest">bmapGLTest</router-link> |
       <router-link to="/amaplocatest">amapLocaTest</router-link> |
       <router-link to="/videocapturetest">videoCaptureTest</router-link> |
-      <!-- <router-link to="/h265test">h265Test</router-link> | -->
       <router-link to="/echartMapTest">echart地图显示测试</router-link> |
+      <router-link to="/somethingTest">杂七杂八测试</router-link> |
     </div>
     <router-view />
   </div>
