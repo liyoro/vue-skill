@@ -8,7 +8,13 @@
 <script>
 
 export default {
-  name: 'App'
+  name: 'App',
+  watch: {
+    // 切换路由，自动滚动到顶部
+    // $route() {
+    //   window.scrollTo(0, 0)
+    // }
+  }
 }
 </script>
 

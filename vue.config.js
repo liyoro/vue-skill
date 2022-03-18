@@ -41,6 +41,9 @@ module.exports = {
       .loader('vue-loader')
       .tap(options => {
         options.compilerOptions.preserveWhitespace = true
+        options.transformAssetUrls = {
+          // avatar: 'img-src'
+        }
         return options
       })
       .end()

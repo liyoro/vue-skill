@@ -1,5 +1,4 @@
 import { mapRequest } from '@/api/map'
-import { findElem } from '@/utils/utils.js'
 
 export default {
   name: 'echartMapTestView',
@@ -43,7 +42,7 @@ export default {
 
           let hoverObj = {}
 
-          const objIndex = findElem(this.mapPopData, 'adcode', adcode)
+          const objIndex = this.$utils.findElem(this.mapPopData, 'adcode', adcode)
           if (objIndex !== -1) {
             hoverObj = this.mapPopData[objIndex]
           } else {

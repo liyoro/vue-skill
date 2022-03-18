@@ -1,0 +1,4 @@
+// 解决vue渲染页面时出现的变量闪烁
+[v-cloak] {
+    display: none;
+}

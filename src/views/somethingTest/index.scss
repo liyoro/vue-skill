@@ -1,3 +1,10 @@
 .somethingTestView {
   padding: 10px;
+  .line {
+    display: flex;
+    align-items: center;
+  }
+  .color1 {
+    color: red;
+  }
 }

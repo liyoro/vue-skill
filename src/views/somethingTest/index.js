@@ -1,15 +1,19 @@
 
 import { somethingData } from '@/api/something'
+// import Vue from 'vue'
+import son from './component/son.vue'
 
 export default {
   name: 'somethingTestView',
-  components: { },
+  components: { son },
   data() {
     return {
       showText: '',
       test1: {},
       test2: [],
-      test3: []
+      test3: [],
+      includetest: 0,
+      msg: '子组件访问父数据测试'
     }
   },
   mounted() {
@@ -51,7 +55,25 @@ export default {
       // const b = a ?? 2
 
       // globalThis
-      // this.showText = b
+
+      // 获取vue版本
+      /**
+      const version = Number(Vue.version.split('.')[0])
+
+      if (version === 2) {
+        // Vue v2.x.x
+      } else if (version === 1) {
+        // Vue v1.x.x
+      } else {
+        // Unsupported versions of Vue
+      }
+       */
+
+      // this.showText = version
+    },
+    // includes 测试
+    includeClick() {
+      this.includetest = this.$utils.randomIntR(3)
     }
   },
   watch: {}
