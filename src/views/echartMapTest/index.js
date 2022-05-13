@@ -50,6 +50,7 @@ export default {
           }
           return {
             name,
+            mapProperty: item.properties,
             hoverObj: hoverObj
           }
         })
