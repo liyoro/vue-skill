@@ -11,6 +11,7 @@
       <router-link to="/videocapturetest">videoCaptureTest</router-link> |
       <router-link to="/echartMapTest">echart地图显示测试</router-link> |
       <router-link to="/somethingTest">杂七杂八测试</router-link> |
+      <router-link to="/bigscreen">响应式大屏</router-link> |
     </div>
     <router-view />
   </div>

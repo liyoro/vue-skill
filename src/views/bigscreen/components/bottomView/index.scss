@@ -1,0 +1,23 @@
+.bottom-view {
+    width: 786px;
+    height: 243px;
+    position: absolute;
+    left: 547px;
+    right: 547px;
+    bottom: 0;
+    // background-image: url("~@/assets/images/box-1572.png");
+    // background-size: 100% 100%;
+    background-color: #46d9fe;
+    .box-title {
+        height: 38px;
+        line-height: 38px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 600;
+        color: #FFFFFF;
+    }
+    .chart-content {
+      width: 100%;
+      height: 208px;
+    }
+}

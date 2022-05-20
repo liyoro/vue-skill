@@ -1,0 +1,26 @@
+.bs-container {
+  width: 100%;
+  height: 100%;
+  // background-image: url("~@/assets/images/bg.png");
+  // background-size: 100% 100%;
+  background-color: rgba(247, 247, 247, 1);
+	background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  .bigscreen {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform-origin: left top;
+    z-index: 999;
+    .content-view {
+      margin: 20px 20px 30px 20px;
+      height: 968px;
+      position: relative;
+    }
+  }
+}

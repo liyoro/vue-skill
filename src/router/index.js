@@ -75,6 +75,15 @@ const routes = [
     name: 'echartMap',
     meta: { title: 'echart省市地图显示测试' },
     component: () => import('@/views/echartMapTest/index.vue')
+  },
+  {
+    path: '/bigscreen',
+    name: 'bigscreen',
+    component: () => import('@/views/bigscreen/index.vue'),
+    meta: {
+      title: '大屏',
+      icon: 'el-icon-s-platform'
+    }
   }
 ]
 

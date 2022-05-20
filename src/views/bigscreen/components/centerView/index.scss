@@ -1,0 +1,14 @@
+.center-view {
+    width: 786px;
+    height: 705px;
+    position: absolute;
+    left: 547px;
+    right: 547px;
+    top: 0;
+    background-color: #46d9fe;
+    .map-view {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}

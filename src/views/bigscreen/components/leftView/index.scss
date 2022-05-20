@@ -1,0 +1,34 @@
+@import '@/styles/box.scss';
+
+.left-view {
+    width: 522px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.box-1-bg {
+    // background-image: url("~@/assets/images/box-308.png");
+    // background-size: 100% 100%;
+    background-color: #46d9fe;
+}
+
+.box-2-bg {
+    // background-image: url("~@/assets/images/box-486-1.png");
+    // background-size: 100% 100%;
+    background-color: #46d9fe;
+}
+
+.box-3-bg {
+    // background-image: url("~@/assets/images/box-486-2.png");
+    // background-size: 100% 100%;
+    background-color: #46d9fe;
+}
+
+.box-4-bg {
+    // background-image: url("~@/assets/images/box-486-3.png");
+    // background-size: 100% 100%;
+    background-color: #46d9fe;
+}
