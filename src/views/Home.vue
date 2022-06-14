@@ -5,7 +5,7 @@
       <router-link to="/charttest">chartTest</router-link> |
       <router-link to="/dynamictabletest">dynamicTableTest</router-link> |
       <router-link to="/polylinetest">polylineTest</router-link> |
-      <!-- <router-link to="/bmaptest">bmapTest</router-link> | -->
+      <router-link to="/bmaptest">bmapTest</router-link> |
       <router-link to="/bmapgltest">bmapGLTest</router-link> |
       <router-link to="/amaplocatest">amapLocaTest</router-link> |
       <router-link to="/videocapturetest">videoCaptureTest</router-link> |

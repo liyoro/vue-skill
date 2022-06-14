@@ -1,7 +1,7 @@
 <template>
   <div class="bmapTestView">
     <h2>百度地图测试</h2>
-    <bmap-view />
+    <bmap-view ref="bMap" />
   </div>
 </template>
 

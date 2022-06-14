@@ -1,7 +1,7 @@
 /*
  * @Author: liyoro
  * @since: 2021-08-23 11:11:54
- * @lastTime: 2021-08-23 15:10:42
+ * @lastTime: 2022-06-14 16:17:36
  */
 
 // const options = {
@@ -21,7 +21,7 @@ const config = {
   BMap: {
     version: '3.0'
   },
-  type: ''
+  type: 'webgl'
 }
 
 const Status = {
@@ -40,7 +40,7 @@ const load = function(options) {
         return
       }
       if (!type) {
-        config.type = ''
+        config.type = config.BMap.type
       }
       config.key = key
       config.BMap.version = version || config.BMap.version

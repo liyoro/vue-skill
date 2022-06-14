@@ -9,7 +9,7 @@ export default {
     },
     styleId: {
       type: String,
-      default: '728e2ca5c2c75aa8b26190a9e23c4687'
+      default: '41d153e7e9e7bcda9541996853046c93'
     },
     zoom: {
       type: Number,
@@ -56,6 +56,9 @@ export default {
         })
         const point = new BMap.Point(this.center[0], this.center[1])
         this.map.centerAndZoom(point, this.zoom)
+        this.map.setMapStyleV2({
+          styleId: this.styleId
+        })
 
         this.$emit('bmap-ready', this.map)
       }).catch(e => {
