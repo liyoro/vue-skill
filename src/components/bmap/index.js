@@ -25,7 +25,6 @@ export default {
       type: Number | String,
       default: 520
     }
-
   },
   computed: {
     mapHeight() {
@@ -51,11 +50,11 @@ export default {
         key: this.ak,
         version: '3.0'
       }).then((BMap) => {
-        this.map = new BMap.Map('bmapcontainer', {
-          enableBizAuthLogo: false
-        })
+        this.map = new BMap.Map('bmapcontainer')
         const point = new BMap.Point(this.center[0], this.center[1])
         this.map.centerAndZoom(point, this.zoom)
+        // 开启鼠标滚轮缩放
+        this.map.enableScrollWheelZoom(true)
         this.map.setMapStyleV2({
           styleId: this.styleId
         })
@@ -65,7 +64,6 @@ export default {
         console.log(e)
       })
     }
-
   },
   watch: {}
 }

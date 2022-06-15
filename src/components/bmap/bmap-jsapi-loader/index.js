@@ -1,7 +1,7 @@
 /*
  * @Author: liyoro
  * @since: 2021-08-23 11:11:54
- * @lastTime: 2022-06-14 16:17:36
+ * @lastTime: 2022-06-15 10:15:31
  */
 
 // const options = {
@@ -20,8 +20,7 @@ const config = {
   key: '',
   BMap: {
     version: '3.0'
-  },
-  type: 'webgl'
+  }
 }
 
 const Status = {
@@ -61,7 +60,6 @@ const load = function(options) {
       const script = document.createElement('script')
       script.type = 'text/javascript'
       script.src = 'https://api.map.baidu.com/api?v=' + config.BMap.version +
-        '&type=' + type +
         '&ak=' + key + '&callback=___onAPILoaded'
       script.onerror = (e) => {
         Status.BMap = LoadStatus.failed
