@@ -13,7 +13,11 @@
       <router-link to="/somethingTest">杂七杂八测试</router-link> |
       <router-link to="/bigscreen">响应式大屏</router-link> |
     </div>
+    <div>
+      <el-button type="primary" @click="show1">百度地图选坐标组件测试</el-button>
+    </div>
     <router-view />
+    <point-select-dialog ref="pointSelectDialog" @confirmCllick="bMapPointSelect" />
   </div>
 </template>
 
@@ -21,6 +25,15 @@
 export default {
   name: 'Home',
   components: {
+    PointSelectDialog: () => import ('@/components/bmap/pointSelect.vue')
+  },
+  methods: {
+    show1() {
+      this.$refs.pointSelectDialog.show()
+    },
+    bMapPointSelect(res) {
+      console.log(res)
+    }
   }
 }
 </script>

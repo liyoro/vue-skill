@@ -9,7 +9,8 @@ import {
   Tooltip,
   Input,
   Select,
-  Option
+  Option,
+  Dialog
 } from 'element-ui'
 
 Vue.use(Button)
@@ -20,3 +21,4 @@ Vue.use(Tooltip)
 Vue.use(Input)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Dialog)

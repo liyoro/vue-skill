@@ -1,7 +1,7 @@
 /*
  * @Author: liyoro
  * @since: 2021-08-23 11:11:54
- * @lastTime: 2022-06-15 10:15:31
+ * @lastTime: 2022-06-16 12:16:45
  */
 
 // const options = {
@@ -30,7 +30,7 @@ const Status = {
 const load = function(options) {
   return new Promise((resolve, reject) => {
     if (Status.BMap === LoadStatus.failed) {
-      reject('')
+      reject('bMapPointSelect')
     } else if (Status.BMap === LoadStatus.notload) {
       // 初次加载
       const { key, version, type } = options
@@ -66,6 +66,11 @@ const load = function(options) {
         reject(e)
       }
       parentNode.appendChild(script)
+    } else {
+      if (typeof window.BMap !== 'undefined') {
+        resolve(window.BMap)
+      }
+      reject('')
     }
   })
 }
