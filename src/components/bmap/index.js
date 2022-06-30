@@ -101,5 +101,12 @@ export default {
       })
     }
   },
-  watch: {}
+  watch: {
+    center() {
+      if (this.map) {
+        const point = new BMap.Point(this.center[0], this.center[1])
+        this.map.setCenter(point)
+      }
+    }
+  }
 }

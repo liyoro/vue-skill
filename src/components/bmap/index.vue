@@ -24,7 +24,7 @@ export default {
   height: 100%;
 }
 .custom-map {
-  /*地图标题 infoWindow*/
+  /* 地图标题 infoWindow */
   ::v-deep .BMap_pop .BMap_center {
     display: none;
   }
@@ -43,9 +43,9 @@ export default {
   ::v-deep .BMap_pop > div:nth-child(1) {
     display: none;
   }
-  ::v-deep .BMap_pop div:nth-child(3) div {
-    display: none;
-  }
+  // ::v-deep .BMap_pop div:nth-child(3) div {
+  //   display: none;
+  // }
   ::v-deep .BMap_pop div:nth-child(5) div {
     display: none;
   }
